@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>minivue</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <div>
+      <p v-html="name"></p>
+    </div> -->
+    <p v-text="people.name" title="hahah"></p>
+    <p v-text="people.name" title="hahah"></p>
+    <p v-text="people.name" title="hahah"></p>
+    <p v-html="msg"></p>
+    {{people.name}}
+    <div>
+      {{msg}}
+    </div>
+    <input type="text" v-model="people.name">
+    <!-- <p v-html="people.name"></p> -->
+    <button v-on:click="clickFn">点我</button>
+  </div>
+</body>
+<script src="./src/watcher.js"></script>
+<script src="./src/observer.js"></script>
+<script src="./src/compile.js"></script>
+<script src="./src/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el:'#app',
+    data: {
+      msg: 'hello vue',
+      name:'hahaha',
+      people: {
+        name:'zhangsan',
+        age:18
+      }
+    },
+    method: {
+      clickFn() {
+        console.log(this.msg)
+        this.msg = 'haahh'
+      }
+    }
+  })
+</script>
+</html>
